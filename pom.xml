@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.krsna</groupId>
-	<artifactId>sample2</artifactId>
+	<artifactId>mykart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>sample2</name>
-	<description>Spring MVC </description>
+	<name>mykart</name>
+	<description>MyKart</description>
 
 	<properties>
 		<java.version>11</java.version>
