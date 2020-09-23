@@ -1,9 +1,7 @@
 <jsp:directive.include file="header.jsp" />
 <main>
     
-	<!-- LatestProducts -->    
-	<jsp:directive.include file="latest-products.jsp" />
-    
+	<h1>Create Product</h1>
     
     
 </main>
