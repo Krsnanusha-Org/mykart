@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,18 +15,16 @@ import javax.persistence.Table;
 public class Role {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_generator")
+	@SequenceGenerator(name="role_generator", sequenceName = "role_seq", allocationSize=1)
     private Long id;
 	
 	@ManyToMany(mappedBy = "roles")
-	public Set<User> getUsers() {
-		return users;
-	}
+	private Set<User> users;
 	
 
 	private String name;
 	
-	private Set<User> users;
 	
 	public Long getId() {
 		return id;
@@ -40,6 +39,9 @@ public class Role {
 		this.name = name;
 	}
 	
+	public Set<User> getUsers() {
+		return users;
+	}
 	
 	public void setUsers(Set<User> users) {
 		this.users = users;

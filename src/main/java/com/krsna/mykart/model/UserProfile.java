@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +17,8 @@ import javax.persistence.Table;
 public class UserProfile {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userprofile_generator")
+	@SequenceGenerator(name="userprofile_generator", sequenceName = "profile_seq", allocationSize=1)
     private Long id;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "userProfile")
