@@ -1,35 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 #nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+	position: sticky;
+	top: 0;
+	z-index: 10;
 }
 
 .navbar {
-    background-image: linear-gradient(to right, #a517ba, #5f1782);
-    padding: 0 !important;
+	background-image: linear-gradient(to right, #a517ba, #5f1782);
+	padding: 0 !important;
+}
+
+.navbar-light .navbar-brand {
+	margin-left: 5px;
+	color: #fff;
+}
+
+.navbar-brand img {
+	height: 40px;
+	padding-left: 20px;
+}
+
+.navbar-nav {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .navbar-nav li {
-    padding: 0 10px;
+	padding: 0 10px;
 }
 
 .navbar-nav li a {
-    color:#fff !important;
+	color: #fff !important;
 }
 
-.signin {
+.signin .search{
 	margin-left: auto;
-	
+	margin-right: 10px;
+	color: #fff;
+}
+.cart {
+	font-size: 20px;
+	color: #fff;
+}
+
+
+#latest-products {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#footer{
+	text-align: center;
 }

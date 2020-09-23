@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Header</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyKart</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -22,7 +23,7 @@
 <body>
 
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light">
 			<a class="navbar-brand" href="#">MyKart</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNav" aria-controls="navbarNav"
@@ -37,7 +38,18 @@
 					
 				</ul>
 				
-				<button class="btn btn-primary signin" type="submit">Sign-Out</button>
+				 <form class="form-inline my-2 my-lg-0 search">
+				     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				  </form>
+				
+				<button type="button" class="btn btn-outline-success signin">SignIn</button>
+
+				<button type="button" class="btn btn-link  cart">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				</button>
+				
+				
 				
 			</div>
 		</nav>
