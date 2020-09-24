@@ -65,7 +65,7 @@ public class MyKartApplication implements ApplicationRunner {
 		User user = new User();
 		user.setUsername("admin");
 		user.setPassword(bCryptPasswordEncoder.encode("admin"));
-		user.setPasswordConfirm("admin");
+		user.setPasswordConfirm(bCryptPasswordEncoder.encode("admin"));
 		
 		Set<Role> userRoles = new HashSet<Role>();
 		userRoles.add(adminRole);
