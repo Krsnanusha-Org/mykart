@@ -48,10 +48,12 @@ public class MyKartApplication implements ApplicationRunner {
 		
 		Role adminRole = new Role();
 		adminRole.setName("ROLE_ADMIN");
+		if(!roleRepository.existsById(1l))
 		roleRepository.save(adminRole);
 		
 		Role userRole = new Role();
 		userRole.setName("ROLE_USER");
+		if(!roleRepository.existsById(2l))
 		roleRepository.save(userRole);
 		
 		
@@ -73,6 +75,7 @@ public class MyKartApplication implements ApplicationRunner {
 		up.setPhoneNumber("9885773990");
 		user.setUserProfile(up);
 		
+		if(!userRepository.existsById(1l))
 		userRepository.save(user);
 		
 		
