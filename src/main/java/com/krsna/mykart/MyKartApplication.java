@@ -19,9 +19,9 @@ import com.krsna.mykart.model.UserProfile;
 import com.krsna.mykart.repository.RoleRepository;
 import com.krsna.mykart.repository.UserRepository;
 
-@SpringBootApplication
-@EnableJpaRepositories(basePackages = "com.krsna.mykart.*")
-public class MyKartApplication implements ApplicationRunner {
+@SpringBootApplication //@Configuration + @EnableAutoConfiguration[@EntityScan] + @ComponentScan
+@EnableJpaRepositories(basePackages = "com.krsna.mykart.repository") // Where are your @Repository files
+public class MyKartApplication implements ApplicationRunner { //Command Line Runner-run after the application starts
 
 	
 	Logger logger = org.slf4j.LoggerFactory.getLogger(MyKartApplication.class);
@@ -30,15 +30,15 @@ public class MyKartApplication implements ApplicationRunner {
 	UserRepository userRepository;
 	
 	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	RoleRepository roleRepository;
 	
 	@Autowired
-	RoleRepository roleRepository;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyKartApplication.class, args);
-		
-		
 	}
 	
 //	 @Override
@@ -50,6 +50,9 @@ public class MyKartApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
+		//Basic Data
+		//2 Role [ROLE_ADMIN | ROLE_USER]
+		
 		Role adminRole = new Role();
 		adminRole.setName("ROLE_ADMIN");
 		if(!roleRepository.existsById(1l))
@@ -60,8 +63,6 @@ public class MyKartApplication implements ApplicationRunner {
 		if(!roleRepository.existsById(2l))
 		roleRepository.save(userRole);
 		
-		
-
 		User user = new User();
 		user.setUsername("admin");
 		user.setPassword(bCryptPasswordEncoder.encode("admin"));
