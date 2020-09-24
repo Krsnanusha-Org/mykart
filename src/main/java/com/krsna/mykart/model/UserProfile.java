@@ -21,7 +21,7 @@ public class UserProfile {
 	@SequenceGenerator(name="userprofile_generator", sequenceName = "profile_seq", allocationSize=1)
     private Long id;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "userProfile")
+	@OneToOne(cascade=CascadeType.ALL, mappedBy = "userProfile")
 	private User user;
 
 	private String phoneNumber;

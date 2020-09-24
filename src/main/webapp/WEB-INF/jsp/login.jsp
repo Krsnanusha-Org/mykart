@@ -7,8 +7,16 @@
 <jsp:directive.include file="header.jsp" />
 
 	<div class="container">
-	
-	    <form method="POST" action="/login" class="form-signin">
+
+	<c:if test="${not empty error}">
+		<div class="alert alert-danger">
+			<spring:message
+				code="AbstractUserDetailsAuthenticationProvider.badCredentials" />
+			<br />
+		</div>
+	</c:if>
+
+	<form method="POST" action="/doLogin" class="form-signin">
 	        <h2 class="form-heading">Log in</h2>
 	
 	        <div class="form-group ">

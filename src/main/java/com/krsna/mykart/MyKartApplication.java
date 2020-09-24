@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.krsna.mykart.model.Gender;
 import com.krsna.mykart.model.Role;
@@ -27,6 +28,9 @@ public class MyKartApplication implements ApplicationRunner {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
 	RoleRepository roleRepository;
@@ -60,7 +64,7 @@ public class MyKartApplication implements ApplicationRunner {
 
 		User user = new User();
 		user.setUsername("admin");
-		user.setPassword("admin");
+		user.setPassword(bCryptPasswordEncoder.encode("admin"));
 		user.setPasswordConfirm("admin");
 		
 		Set<Role> userRoles = new HashSet<Role>();

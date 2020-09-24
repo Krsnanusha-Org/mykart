@@ -29,13 +29,13 @@ public class User {
 	private String password;
 	private String passwordConfirm;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tbl_user_role", 
 	joinColumns = @JoinColumn(name = "user_id"), 
 				  inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
     private UserProfile userProfile;
 
 	

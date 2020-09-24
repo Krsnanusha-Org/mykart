@@ -1,7 +1,10 @@
 <jsp:directive.include file="header.jsp" />
 <main>
     
-	<h1>About Page</h1>    
+	<!-- LatestProducts -->    
+	<h1>Dashboard Page</h1>
+    
+    
     
 </main>
 
