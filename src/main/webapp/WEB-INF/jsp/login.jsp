@@ -15,7 +15,7 @@
             <h5 class="card-title text-center">Sign In</h5>
             <c:if test="${not empty error}">
 				<div class="alert alert-danger">
-				Bad Credentials
+				
 					<spring:message
 						code="AbstractUserDetailsAuthenticationProvider.badCredentials" />
 					<br />

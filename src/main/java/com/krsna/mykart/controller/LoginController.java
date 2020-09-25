@@ -29,7 +29,7 @@ public class LoginController {
     public String loginError(Model model) {
         log.info("Login attempt failed");
         model.addAttribute("error", "true");
-        return "redirect:/login";
+        return "login";
     }
     
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
