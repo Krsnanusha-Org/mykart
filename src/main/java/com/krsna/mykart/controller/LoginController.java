@@ -19,16 +19,19 @@ import com.krsna.mykart.model.User;
 public class LoginController {
 	
 	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
+	
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         return "login";
     }
+    
     @RequestMapping(value = "/loginFailed", method = RequestMethod.GET)
     public String loginError(Model model) {
         log.info("Login attempt failed");
         model.addAttribute("error", "true");
-        return "login";
+        return "redirect:/login";
     }
+    
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(SessionStatus session) {
     	System.out.println("LoginController.logout()");
@@ -36,6 +39,7 @@ public class LoginController {
         session.setComplete();
         return "redirect:/login";
     }
+    
     @RequestMapping(value = "/postLogin", method = RequestMethod.POST)
     public String postLogin(Model model, HttpSession session) {
         log.info("postLogin()");
@@ -47,6 +51,8 @@ public class LoginController {
         session.setAttribute("userId", loggedInUser.getId());
         return "redirect:/dashboard";
     }
+   
+    
     private void validatePrinciple(Object principal) {
         if (!(principal instanceof MyKartUser)) {
             throw new  IllegalArgumentException("Principal can not be null!");

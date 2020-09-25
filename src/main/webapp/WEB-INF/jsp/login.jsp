@@ -15,6 +15,7 @@
             <h5 class="card-title text-center">Sign In</h5>
             <c:if test="${not empty error}">
 				<div class="alert alert-danger">
+				Bad Credentials
 					<spring:message
 						code="AbstractUserDetailsAuthenticationProvider.badCredentials" />
 					<br />
@@ -39,7 +40,7 @@
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google"></i> Sign in with Google</button>
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-square"></i>
- Sign in with Facebook</button>
+				 Sign in with Facebook</button>
             </form>
           </div>
         </div>

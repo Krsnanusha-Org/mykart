@@ -41,17 +41,13 @@
 				
 				 <form class="form-inline my-2 my-lg-0 search">
 				     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				  </form>
-				
-				<button type="button" class="btn btn-outline-success signin">SignIn</button>
-				
-				 <a href="<c:url value="/logout" />">Logout</a>
-
-				<button type="button" class="btn btn-link  cart">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-				</button>
-				
+				     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+					 <a class="btn btn-link" href="<c:url value="/login" />">Login</a>
+					 <a class="btn btn-link" href="<c:url value="/logout" />">Logout</a>
+					<button type="button" class="btn btn-link  cart">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</button>
+				 </form>
 				
 				
 			</div>
