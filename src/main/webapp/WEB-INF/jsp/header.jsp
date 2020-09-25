@@ -42,8 +42,17 @@
 				 <form class="form-inline my-2 my-lg-0 search">
 				     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 				     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-					 <a class="btn btn-link" href="<c:url value="/login" />">Login</a>
-					 <a class="btn btn-link" href="<c:url value="/logout" />">Logout</a>
+				     <c:if test="${pageContext.request.userPrincipal.name == null}">
+				     	<a class="btn btn-link" href="<c:url value="/login" />">Login</a>
+				      </c:if>
+						 
+					         <c:if test="${pageContext.request.userPrincipal.name != null}">
+					            <h4>
+					                Hello : ${pageContext.request.userPrincipal.name} | 
+					                <a class="btn btn-link" href="<c:url value="/logout" />">Logout</a>
+					            </h4>
+					        </c:if>
+
 					<button type="button" class="btn btn-link  cart">
 						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 					</button>
